@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Users, 
-  ArrowLeft, 
-  UserMinus, 
-  RefreshCw, 
-  ExternalLink, 
-  ShieldCheck, 
-  ShieldAlert, 
-  UserPlus, 
-  Clock, 
+import {
+  Users,
+  ArrowLeft,
+  UserMinus,
+  RefreshCw,
+  ExternalLink,
+  ShieldCheck,
+  ShieldAlert,
+  UserPlus,
+  Clock,
   AlertCircle,
   CheckCircle2
 } from 'lucide-react';
@@ -16,15 +16,15 @@ import StatusBadge from '../components/StatusBadge';
 import { formatTimestamp, truncateAddress, formatRemainingTime } from '../utils/formatters';
 import { BOT_CHAIN_EXPLORER } from '../utils/botChainConfig';
 
-export default function ManageAuthorizedUsersPage({ 
-  lockers = [], 
-  selectedLocker, 
-  onSelectLocker, 
-  setCurrentTab, 
-  account, 
-  getAuthorizedUsersForLocker, 
-  onRevokeAccess, 
-  isRevoking 
+export default function ManageAuthorizedUsersPage({
+  lockers = [],
+  selectedLocker,
+  onSelectLocker,
+  setCurrentTab,
+  account,
+  getAuthorizedUsersForLocker,
+  onRevokeAccess,
+  isRevoking
 }) {
   const [lockerId, setLockerId] = useState(selectedLocker?.id?.toString() || '');
   const [users, setUsers] = useState([]);
@@ -82,7 +82,7 @@ export default function ManageAuthorizedUsersPage({
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-8 space-y-8">
-      
+
       {/* Back button */}
       <button
         onClick={() => setCurrentTab('dashboard')}
@@ -166,11 +166,10 @@ export default function ManageAuthorizedUsersPage({
       {/* Notification banner */}
       {message && (
         <div
-          className={`p-3.5 rounded-xl border text-xs flex items-center gap-2 ${
-            message.type === 'success'
-              ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
-              : 'bg-rose-500/10 border-rose-500/30 text-rose-300'
-          }`}
+          className={`p-3.5 rounded-xl border text-xs flex items-center gap-2 ${message.type === 'success'
+            ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
+            : 'bg-rose-500/10 border-rose-500/30 text-rose-300'
+            }`}
         >
           {message.type === 'success' ? (
             <CheckCircle2 className="w-4 h-4 shrink-0" />
@@ -247,10 +246,10 @@ export default function ManageAuthorizedUsersPage({
                           isRevoked
                             ? 'revoked'
                             : isPermanent
-                            ? 'permanent'
-                            : item.isActive
-                            ? 'active'
-                            : 'expired'
+                              ? 'permanent'
+                              : item.isActive
+                                ? 'active'
+                                : 'expired'
                         }
                       />
                     </td>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  UserPlus, 
-  ArrowLeft, 
-  Clock, 
-  ShieldCheck, 
-  AlertCircle, 
-  ExternalLink, 
+import {
+  UserPlus,
+  ArrowLeft,
+  Clock,
+  ShieldCheck,
+  AlertCircle,
+  ExternalLink,
   Calendar,
   Lock,
   Sparkles,
@@ -14,15 +14,15 @@ import {
 import { isValidAddress, truncateAddress } from '../utils/formatters';
 import { BOT_CHAIN_EXPLORER, BOT_NATIVE_TOKEN } from '../utils/botChainConfig';
 
-export default function GrantAccessPage({ 
-  lockers = [], 
-  selectedLocker, 
-  onSelectLocker, 
-  onGrantAccess, 
-  isSubmitting, 
-  setCurrentTab, 
-  account, 
-  isCorrectNetwork 
+export default function GrantAccessPage({
+  lockers = [],
+  selectedLocker,
+  onSelectLocker,
+  onGrantAccess,
+  isSubmitting,
+  setCurrentTab,
+  account,
+  isCorrectNetwork
 }) {
   const [lockerId, setLockerId] = useState(selectedLocker?.id?.toString() || '');
   const [userAddress, setUserAddress] = useState('');
@@ -106,7 +106,7 @@ export default function GrantAccessPage({
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4 py-8 space-y-8">
-      
+
       {/* Back button */}
       <button
         onClick={() => setCurrentTab('dashboard')}
@@ -277,11 +277,10 @@ export default function GrantAccessPage({
                   type="button"
                   key={preset.id}
                   onClick={() => setExpiryType(preset.id)}
-                  className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all ${
-                    expiryType === preset.id
-                      ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/50 shadow-md shadow-cyan-500/10'
-                      : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700'
-                  }`}
+                  className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all ${expiryType === preset.id
+                    ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/50 shadow-md shadow-cyan-500/10'
+                    : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700'
+                    }`}
                 >
                   {preset.label}
                 </button>
@@ -316,11 +315,10 @@ export default function GrantAccessPage({
           <button
             type="submit"
             disabled={isSubmitting || myLockers.length === 0 || !account || !isCorrectNetwork}
-            className={`w-full py-4 px-6 rounded-xl font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98] ${
-              isSubmitting
-                ? 'bg-cyan-600/70 text-slate-200 cursor-wait'
-                : 'bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 shadow-cyan-500/25'
-            } disabled:opacity-50 disabled:cursor-not-allowed`}
+            className={`w-full py-4 px-6 rounded-xl font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98] ${isSubmitting
+              ? 'bg-cyan-600/70 text-slate-200 cursor-wait'
+              : 'bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 shadow-cyan-500/25'
+              } disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             {isSubmitting ? (
               <>

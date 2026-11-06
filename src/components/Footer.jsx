@@ -1,11 +1,11 @@
 import React from 'react';
 import { Shield, ExternalLink, Globe, Cpu, Hash } from 'lucide-react';
-import { 
-  BOT_CHAIN_ID, 
-  BOT_CHAIN_RPC, 
-  BOT_CHAIN_EXPLORER, 
-  BOT_NATIVE_TOKEN, 
-  BOT_TOTAL_SUPPLY 
+import {
+  BOT_CHAIN_ID,
+  BOT_CHAIN_RPC,
+  BOT_CHAIN_EXPLORER,
+  BOT_NATIVE_TOKEN,
+  BOT_TOTAL_SUPPLY
 } from '../utils/botChainConfig';
 
 export default function Footer() {
@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="w-full mt-20 border-t border-slate-800/80 bg-[#060910] text-slate-400 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          
+
           {/* Col 1: Brand Info */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
